@@ -1,0 +1,5 @@
+2024/07/20 15:37:10 Received {c0 n2 {"type":"init","node_id":"n2","node_ids":["n0","n1","n2"],"msg_id":1}}
+2024/07/20 15:37:10 Node n2 initialized
+2024/07/20 15:37:10 Sent {"src":"n2","dest":"c0","body":{"in_reply_to":1,"type":"init_ok"}}
+2024/07/20 15:37:10 Received {c8 n2 {"type":"generate","msg_id":1}}
+2024/07/20 15:37:10 No handler for {"id":8,"src":"c8","dest":"n2","body":{"type":"generate","msg_id":1}}

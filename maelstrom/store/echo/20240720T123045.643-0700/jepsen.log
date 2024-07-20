@@ -1,0 +1,157 @@
+2024-07-20 12:30:45,689{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w echo --bin /home/sa3036/Documents/git_projects/dist_sys_challenges_fly_io/maelstrom-echo --node-count 1 --time-limit 10
+2024-07-20 12:30:45,887{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability nil
+ :max-txn-length 4
+ :concurrency 1
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x196c8b93"
+         "maelstrom.db$db$reify__16142@196c8b93"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "echo"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x34989ceb" "2024-07-20T12:30:45.643-07:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x61fb3dae"
+         "maelstrom.net$jepsen_net$reify__15251@61fb3dae"]
+ :client
+ #object[maelstrom.workload.echo$client$reify__16863
+         "0x9c88323"
+         "maelstrom.workload.echo$client$reify__16863@9c88323"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x6d4bdb75"
+         "java.util.concurrent.CyclicBarrier@6d4bdb75"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 5
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x1dc47df3"
+         "jepsen.checker$compose$reify__11881@1dc47df3"]
+ :argv
+ ("test"
+  "-w"
+  "echo"
+  "--bin"
+  "/home/sa3036/Documents/git_projects/dist_sys_challenges_fly_io/maelstrom-echo"
+  "--node-count"
+  "1"
+  "--time-limit"
+  "10")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@256a25a8"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@68f67bbd"]})
+ :nodes ["n0"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin
+ "/home/sa3036/Documents/git_projects/dist_sys_challenges_fly_io/maelstrom-echo"
+ :generator
+ (jepsen.generator.TimeLimit
+  {:limit 10000000000,
+   :cutoff nil,
+   :gen (jepsen.generator.Any
+         {:gens [(jepsen.generator.OnThreads
+                  {:f #{:nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x333813e7"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@333813e7"],
+                   :gen nil})
+                 (jepsen.generator.OnThreads
+                  {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x292237cd"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@292237cd"],
+                   :gen (jepsen.generator.Stagger
+                         {:dt 400000000,
+                          :next-time nil,
+                          :gen (jepsen.generator.EachThread
+                                {:fresh-gen #object[maelstrom.workload.echo$workload$fn__16882
+                                                    "0x797a5b31"
+                                                    "maelstrom.workload.echo$workload$fn__16882@797a5b31"],
+                                 :context-filters #object[clojure.core$promise$reify__8591
+                                                          "0x13d7d1a8"
+                                                          {:status :pending,
+                                                           :val nil}],
+                                 :gens {}})})})]})})
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0x60035f1e"
+         "maelstrom.net$jepsen_os$reify__15254@60035f1e"]
+ :time-limit 10
+ :workload :echo
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-07-20 12:30:52,402{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-07-20 12:30:52,405{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-07-20 12:30:52,409{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-07-20 12:30:52,416{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-07-20 12:30:52,421{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-07-20 12:30:52,423{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /home/sa3036/Documents/git_projects/dist_sys_challenges_fly_io/maelstrom-echo []
+2024-07-20 12:30:53,433{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2024-07-20 12:30:53,437{GMT}	WARN	[jepsen test runner] jepsen.core: Test crashed!
+java.io.IOException: Cannot run program "/home/sa3036/Documents/git_projects/dist_sys_challenges_fly_io/maelstrom-echo" (in directory "/tmp"): error=13, Permission denied
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1142)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at maelstrom.process$start_node_BANG_.invokeStatic(process.clj:199)
+	at maelstrom.process$start_node_BANG_.invoke(process.clj:168)
+	at maelstrom.db$db$reify__16142.setup_BANG_(db.clj:34)
+	at jepsen.db$fn__8729$G__8723__8733.invoke(db.clj:12)
+	at jepsen.db$fn__8729$G__8722__8738.invoke(db.clj:12)
+	at clojure.core$partial$fn__5908.invoke(core.clj:2642)
+	at jepsen.control$on_nodes$fn__8599.invoke(control.clj:314)
+	at clojure.lang.AFn.applyToHelper(AFn.java:154)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.applyTo(RestFn.java:142)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:408)
+	at dom_top.core$real_pmap_helper$build_thread__211$fn__212.invoke(core.clj:163)
+	at clojure.lang.AFn.applyToHelper(AFn.java:152)
+	at clojure.lang.AFn.applyTo(AFn.java:144)
+	at clojure.core$apply.invokeStatic(core.clj:667)
+	at clojure.core$with_bindings_STAR_.invokeStatic(core.clj:1990)
+	at clojure.core$with_bindings_STAR_.doInvoke(core.clj:1990)
+	at clojure.lang.RestFn.invoke(RestFn.java:425)
+	at clojure.lang.AFn.applyToHelper(AFn.java:156)
+	at clojure.lang.RestFn.applyTo(RestFn.java:132)
+	at clojure.core$apply.invokeStatic(core.clj:671)
+	at clojure.core$bound_fn_STAR_$fn__5818.doInvoke(core.clj:2020)
+	at clojure.lang.RestFn.invoke(RestFn.java:397)
+	at clojure.lang.AFn.run(AFn.java:22)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: error=13, Permission denied
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:313)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1109)
+	... 31 common frames omitted

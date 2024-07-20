@@ -1,0 +1,325 @@
+2024-07-20 12:38:52,263{GMT}	INFO	[jepsen test runner] jepsen.core: Command line:
+lein run test -w echo --bin /home/sa3036/go/bin/maelstrom-echo --node-count 1 --time-limit 10
+2024-07-20 12:38:52,453{GMT}	INFO	[jepsen test runner] jepsen.core: Running test:
+{:args []
+ :remote
+ #jepsen.control.retry.Remote{:remote #jepsen.control.scp.Remote{:cmd-remote #jepsen.control.sshj.SSHJRemote{:concurrency-limit 6,
+                                                                                                             :conn-spec nil,
+                                                                                                             :client nil,
+                                                                                                             :semaphore nil},
+                                                                 :conn-spec nil},
+                              :conn nil}
+ :log-net-send false
+ :node-count 1
+ :availability nil
+ :max-txn-length 4
+ :concurrency 1
+ :db
+ #object[maelstrom.db$db$reify__16142
+         "0x8d40f07"
+         "maelstrom.db$db$reify__16142@8d40f07"]
+ :max-writes-per-key 16
+ :leave-db-running? false
+ :name "echo"
+ :logging-json? false
+ :start-time
+ #object[org.joda.time.DateTime "0x49d5b651" "2024-07-20T12:38:52.220-07:00"]
+ :nemesis-interval 10
+ :net
+ #object[maelstrom.net$jepsen_net$reify__15251
+         "0x34989ceb"
+         "maelstrom.net$jepsen_net$reify__15251@34989ceb"]
+ :client
+ #object[maelstrom.workload.echo$client$reify__16863
+         "0x61fb3dae"
+         "maelstrom.workload.echo$client$reify__16863@61fb3dae"]
+ :barrier
+ #object[java.util.concurrent.CyclicBarrier
+         "0x9c88323"
+         "java.util.concurrent.CyclicBarrier@9c88323"]
+ :log-stderr false
+ :pure-generators true
+ :ssh {:dummy? true}
+ :rate 5
+ :checker
+ #object[jepsen.checker$compose$reify__11881
+         "0x6d4bdb75"
+         "jepsen.checker$compose$reify__11881@6d4bdb75"]
+ :argv
+ ("test"
+  "-w"
+  "echo"
+  "--bin"
+  "/home/sa3036/go/bin/maelstrom-echo"
+  "--node-count"
+  "1"
+  "--time-limit"
+  "10")
+ :nemesis
+ (jepsen.nemesis.ReflCompose
+  {:fm {:start-partition 0,
+        :stop-partition 0,
+        :kill 1,
+        :start 1,
+        :pause 1,
+        :resume 1},
+   :nemeses [#unprintable "jepsen.nemesis.combined$partition_nemesis$reify__16416@1dc47df3"
+             #unprintable "jepsen.nemesis.combined$db_nemesis$reify__16397@256a25a8"]})
+ :nodes ["n0"]
+ :test-count 1
+ :latency {:mean 0, :dist :constant}
+ :bin "/home/sa3036/go/bin/maelstrom-echo"
+ :generator
+ (jepsen.generator.TimeLimit
+  {:limit 10000000000,
+   :cutoff nil,
+   :gen (jepsen.generator.Any
+         {:gens [(jepsen.generator.OnThreads
+                  {:f #{:nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x6dd0e2f4"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@6dd0e2f4"],
+                   :gen nil})
+                 (jepsen.generator.OnThreads
+                  {:f #jepsen.generator.context.AllBut{:element :nemesis},
+                   :context-filter #object[jepsen.generator.context$make_thread_filter$lazy_filter__9167
+                                           "0x333813e7"
+                                           "jepsen.generator.context$make_thread_filter$lazy_filter__9167@333813e7"],
+                   :gen (jepsen.generator.Stagger
+                         {:dt 400000000,
+                          :next-time nil,
+                          :gen (jepsen.generator.EachThread
+                                {:fresh-gen #object[maelstrom.workload.echo$workload$fn__16882
+                                                    "0x292237cd"
+                                                    "maelstrom.workload.echo$workload$fn__16882@292237cd"],
+                                 :context-filters #object[clojure.core$promise$reify__8591
+                                                          "0x797a5b31"
+                                                          {:status :pending,
+                                                           :val nil}],
+                                 :gens {}})})})]})})
+ :log-net-recv false
+ :os
+ #object[maelstrom.net$jepsen_os$reify__15254
+         "0x13d7d1a8"
+         "maelstrom.net$jepsen_os$reify__15254@13d7d1a8"]
+ :time-limit 10
+ :workload :echo
+ :consistency-models [:strict-serializable]
+ :topology :grid}
+
+2024-07-20 12:38:59,164{GMT}	INFO	[jepsen node n0] maelstrom.net: Starting Maelstrom network
+2024-07-20 12:38:59,167{GMT}	INFO	[jepsen test runner] jepsen.db: Tearing down DB
+2024-07-20 12:38:59,172{GMT}	INFO	[jepsen test runner] jepsen.db: Setting up DB
+2024-07-20 12:38:59,181{GMT}	INFO	[jepsen node n0] maelstrom.service: Starting services: (lin-kv lin-tso lww-kv seq-kv)
+2024-07-20 12:38:59,186{GMT}	INFO	[jepsen node n0] maelstrom.db: Setting up n0
+2024-07-20 12:38:59,188{GMT}	INFO	[jepsen node n0] maelstrom.process: launching /home/sa3036/go/bin/maelstrom-echo []
+2024-07-20 12:38:59,249{GMT}	INFO	[jepsen test runner] jepsen.core: Relative time begins now
+2024-07-20 12:38:59,290{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 67"
+2024-07-20 12:38:59,307{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 67", :in_reply_to 1, :msg_id 1, :type "echo_ok"}
+2024-07-20 12:38:59,499{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 23"
+2024-07-20 12:38:59,503{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 23", :in_reply_to 2, :msg_id 2, :type "echo_ok"}
+2024-07-20 12:38:59,870{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 109"
+2024-07-20 12:38:59,874{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 109", :in_reply_to 3, :msg_id 3, :type "echo_ok"}
+2024-07-20 12:38:59,931{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 64"
+2024-07-20 12:38:59,935{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 64", :in_reply_to 4, :msg_id 4, :type "echo_ok"}
+2024-07-20 12:39:00,109{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 61"
+2024-07-20 12:39:00,113{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 61", :in_reply_to 5, :msg_id 5, :type "echo_ok"}
+2024-07-20 12:39:00,241{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 87"
+2024-07-20 12:39:00,245{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 87", :in_reply_to 6, :msg_id 6, :type "echo_ok"}
+2024-07-20 12:39:00,526{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 25"
+2024-07-20 12:39:00,529{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 25", :in_reply_to 7, :msg_id 7, :type "echo_ok"}
+2024-07-20 12:39:00,898{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 49"
+2024-07-20 12:39:00,902{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 49", :in_reply_to 8, :msg_id 8, :type "echo_ok"}
+2024-07-20 12:39:00,903{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 105"
+2024-07-20 12:39:00,906{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 105", :in_reply_to 9, :msg_id 9, :type "echo_ok"}
+2024-07-20 12:39:01,281{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 108"
+2024-07-20 12:39:01,285{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 108", :in_reply_to 10, :msg_id 10, :type "echo_ok"}
+2024-07-20 12:39:01,626{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 69"
+2024-07-20 12:39:01,630{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 69", :in_reply_to 11, :msg_id 11, :type "echo_ok"}
+2024-07-20 12:39:01,652{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 89"
+2024-07-20 12:39:01,657{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 89", :in_reply_to 12, :msg_id 12, :type "echo_ok"}
+2024-07-20 12:39:01,735{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 124"
+2024-07-20 12:39:01,739{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 124", :in_reply_to 13, :msg_id 13, :type "echo_ok"}
+2024-07-20 12:39:01,990{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 81"
+2024-07-20 12:39:01,993{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 81", :in_reply_to 14, :msg_id 14, :type "echo_ok"}
+2024-07-20 12:39:02,145{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 51"
+2024-07-20 12:39:02,148{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 51", :in_reply_to 15, :msg_id 15, :type "echo_ok"}
+2024-07-20 12:39:02,294{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 19"
+2024-07-20 12:39:02,298{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 19", :in_reply_to 16, :msg_id 16, :type "echo_ok"}
+2024-07-20 12:39:02,487{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 110"
+2024-07-20 12:39:02,491{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 110", :in_reply_to 17, :msg_id 17, :type "echo_ok"}
+2024-07-20 12:39:02,680{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 59"
+2024-07-20 12:39:02,683{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 59", :in_reply_to 18, :msg_id 18, :type "echo_ok"}
+2024-07-20 12:39:03,069{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 106"
+2024-07-20 12:39:03,073{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 106", :in_reply_to 19, :msg_id 19, :type "echo_ok"}
+2024-07-20 12:39:03,293{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 93"
+2024-07-20 12:39:03,296{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 93", :in_reply_to 20, :msg_id 20, :type "echo_ok"}
+2024-07-20 12:39:03,688{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 20"
+2024-07-20 12:39:03,692{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 20", :in_reply_to 21, :msg_id 21, :type "echo_ok"}
+2024-07-20 12:39:03,843{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 96"
+2024-07-20 12:39:03,847{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 96", :in_reply_to 22, :msg_id 22, :type "echo_ok"}
+2024-07-20 12:39:04,047{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 124"
+2024-07-20 12:39:04,051{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 124", :in_reply_to 23, :msg_id 23, :type "echo_ok"}
+2024-07-20 12:39:04,147{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 32"
+2024-07-20 12:39:04,150{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 32", :in_reply_to 24, :msg_id 24, :type "echo_ok"}
+2024-07-20 12:39:04,340{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 73"
+2024-07-20 12:39:04,343{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 73", :in_reply_to 25, :msg_id 25, :type "echo_ok"}
+2024-07-20 12:39:04,384{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 7"
+2024-07-20 12:39:04,388{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 7", :in_reply_to 26, :msg_id 26, :type "echo_ok"}
+2024-07-20 12:39:04,562{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 61"
+2024-07-20 12:39:04,566{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 61", :in_reply_to 27, :msg_id 27, :type "echo_ok"}
+2024-07-20 12:39:04,951{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 109"
+2024-07-20 12:39:04,955{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 109", :in_reply_to 28, :msg_id 28, :type "echo_ok"}
+2024-07-20 12:39:05,174{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 30"
+2024-07-20 12:39:05,177{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 30", :in_reply_to 29, :msg_id 29, :type "echo_ok"}
+2024-07-20 12:39:05,348{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 26"
+2024-07-20 12:39:05,351{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 26", :in_reply_to 30, :msg_id 30, :type "echo_ok"}
+2024-07-20 12:39:05,558{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 2"
+2024-07-20 12:39:05,561{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 2", :in_reply_to 31, :msg_id 31, :type "echo_ok"}
+2024-07-20 12:39:05,682{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 100"
+2024-07-20 12:39:05,685{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 100", :in_reply_to 32, :msg_id 32, :type "echo_ok"}
+2024-07-20 12:39:05,728{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 56"
+2024-07-20 12:39:05,731{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 56", :in_reply_to 33, :msg_id 33, :type "echo_ok"}
+2024-07-20 12:39:06,082{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 78"
+2024-07-20 12:39:06,085{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 78", :in_reply_to 34, :msg_id 34, :type "echo_ok"}
+2024-07-20 12:39:06,265{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 47"
+2024-07-20 12:39:06,269{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 47", :in_reply_to 35, :msg_id 35, :type "echo_ok"}
+2024-07-20 12:39:06,323{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 83"
+2024-07-20 12:39:06,327{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 83", :in_reply_to 36, :msg_id 36, :type "echo_ok"}
+2024-07-20 12:39:06,553{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 72"
+2024-07-20 12:39:06,557{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 72", :in_reply_to 37, :msg_id 37, :type "echo_ok"}
+2024-07-20 12:39:06,927{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 56"
+2024-07-20 12:39:06,931{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 56", :in_reply_to 38, :msg_id 38, :type "echo_ok"}
+2024-07-20 12:39:07,283{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 99"
+2024-07-20 12:39:07,287{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 99", :in_reply_to 39, :msg_id 39, :type "echo_ok"}
+2024-07-20 12:39:07,560{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 43"
+2024-07-20 12:39:07,563{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 43", :in_reply_to 40, :msg_id 40, :type "echo_ok"}
+2024-07-20 12:39:07,864{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 57"
+2024-07-20 12:39:07,867{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 57", :in_reply_to 41, :msg_id 41, :type "echo_ok"}
+2024-07-20 12:39:07,886{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 99"
+2024-07-20 12:39:07,890{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 99", :in_reply_to 42, :msg_id 42, :type "echo_ok"}
+2024-07-20 12:39:07,993{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 27"
+2024-07-20 12:39:07,996{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 27", :in_reply_to 43, :msg_id 43, :type "echo_ok"}
+2024-07-20 12:39:08,059{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 50"
+2024-07-20 12:39:08,062{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 50", :in_reply_to 44, :msg_id 44, :type "echo_ok"}
+2024-07-20 12:39:08,336{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 78"
+2024-07-20 12:39:08,339{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 78", :in_reply_to 45, :msg_id 45, :type "echo_ok"}
+2024-07-20 12:39:08,371{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 114"
+2024-07-20 12:39:08,375{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 114", :in_reply_to 46, :msg_id 46, :type "echo_ok"}
+2024-07-20 12:39:08,533{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 91"
+2024-07-20 12:39:08,536{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 91", :in_reply_to 47, :msg_id 47, :type "echo_ok"}
+2024-07-20 12:39:08,655{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 78"
+2024-07-20 12:39:08,658{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 78", :in_reply_to 48, :msg_id 48, :type "echo_ok"}
+2024-07-20 12:39:08,949{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 4"
+2024-07-20 12:39:08,952{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 4", :in_reply_to 49, :msg_id 49, :type "echo_ok"}
+2024-07-20 12:39:09,236{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:invoke	:echo	"Please echo 23"
+2024-07-20 12:39:09,239{GMT}	INFO	[jepsen worker 0] jepsen.util: 0	:ok	:echo	{:echo "Please echo 23", :in_reply_to 50, :msg_id 50, :type "echo_ok"}
+2024-07-20 12:39:09,267{GMT}	INFO	[jepsen test runner] jepsen.core: Run complete, writing
+2024-07-20 12:39:09,392{GMT}	INFO	[jepsen node n0] maelstrom.db: Tearing down n0
+2024-07-20 12:39:11,192{GMT}	INFO	[jepsen node n0] maelstrom.net: Shutting down Maelstrom network
+2024-07-20 12:39:11,193{GMT}	INFO	[jepsen test runner] jepsen.core: Analyzing...
+2024-07-20 12:39:11,385{GMT}	WARN	[clojure-agent-send-off-pool-3] jepsen.checker: Error while checking history:
+java.lang.IllegalStateException: Error rendering plot, verify gnuplot is installed and reachable
+	at jepsen.checker.perf$plot_BANG_.invokeStatic(perf.clj:489)
+	at jepsen.checker.perf$plot_BANG_.invoke(perf.clj:426)
+	at jepsen.checker.perf$point_graph_BANG_.invokeStatic(perf.clj:520)
+	at jepsen.checker.perf$point_graph_BANG_.invoke(perf.clj:493)
+	at jepsen.checker$latency_graph$reify__12098.check(checker.clj:830)
+	at jepsen.checker$check_safe.invokeStatic(checker.clj:86)
+	at jepsen.checker$check_safe.invoke(checker.clj:79)
+	at jepsen.checker$compose$reify__11881$fn__11883.invoke(checker.clj:102)
+	at clojure.core$pmap$fn__8552$fn__8553.invoke(core.clj:7089)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: Cannot run program "gnuplot": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1142)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at java.base/java.lang.Runtime.exec(Runtime.java:590)
+	at clojure.java.shell$sh.invokeStatic(shell.clj:113)
+	at clojure.java.shell$sh.doInvoke(shell.clj:79)
+	at clojure.lang.RestFn.invoke(RestFn.java:512)
+	at gnuplot.core$run_BANG_.invokeStatic(core.clj:76)
+	at gnuplot.core$run_BANG_.invoke(core.clj:66)
+	at gnuplot.core$raw_plot_BANG_.invokeStatic(core.clj:106)
+	at gnuplot.core$raw_plot_BANG_.invoke(core.clj:91)
+	... 15 common frames omitted
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:313)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1109)
+	... 24 common frames omitted
+2024-07-20 12:39:11,379{GMT}	WARN	[clojure-agent-send-off-pool-2] jepsen.checker: Error while checking history:
+java.lang.IllegalStateException: Error rendering plot, verify gnuplot is installed and reachable
+	at jepsen.checker.perf$plot_BANG_.invokeStatic(perf.clj:489)
+	at jepsen.checker.perf$plot_BANG_.invoke(perf.clj:426)
+	at jepsen.checker.perf$rate_graph_BANG_.invokeStatic(perf.clj:623)
+	at jepsen.checker.perf$rate_graph_BANG_.invoke(perf.clj:568)
+	at jepsen.checker$rate_graph$reify__12101.check(checker.clj:843)
+	at jepsen.checker$check_safe.invokeStatic(checker.clj:86)
+	at jepsen.checker$check_safe.invoke(checker.clj:79)
+	at jepsen.checker$compose$reify__11881$fn__11883.invoke(checker.clj:102)
+	at clojure.core$pmap$fn__8552$fn__8553.invoke(core.clj:7089)
+	at clojure.core$binding_conveyor_fn$fn__5823.invoke(core.clj:2047)
+	at clojure.lang.AFn.call(AFn.java:18)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+Caused by: java.io.IOException: Cannot run program "gnuplot": error=2, No such file or directory
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1142)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1073)
+	at java.base/java.lang.Runtime.exec(Runtime.java:590)
+	at clojure.java.shell$sh.invokeStatic(shell.clj:113)
+	at clojure.java.shell$sh.doInvoke(shell.clj:79)
+	at clojure.lang.RestFn.invoke(RestFn.java:512)
+	at gnuplot.core$run_BANG_.invokeStatic(core.clj:76)
+	at gnuplot.core$run_BANG_.invoke(core.clj:66)
+	at gnuplot.core$raw_plot_BANG_.invokeStatic(core.clj:106)
+	at gnuplot.core$raw_plot_BANG_.invoke(core.clj:91)
+	... 15 common frames omitted
+Caused by: java.io.IOException: error=2, No such file or directory
+	at java.base/java.lang.ProcessImpl.forkAndExec(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:313)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:244)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1109)
+	... 24 common frames omitted
+2024-07-20 12:39:11,534{GMT}	INFO	[jepsen test runner] jepsen.core: Analysis complete
+2024-07-20 12:39:11,578{GMT}	INFO	[jepsen results] jepsen.store: Wrote /home/sa3036/Downloads/softwares/maelstrom/store/echo/20240720T123852.220-0700/results.edn
+2024-07-20 12:39:11,619{GMT}	INFO	[jepsen test runner] jepsen.core: {:perf {:latency-graph {:valid? :unknown,
+                        :error "java.lang.IllegalStateException: Error rendering plot, verify gnuplot is installed and reachable\n at jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$point_graph_BANG_.invokeStatic (perf.clj:520)\n    jepsen.checker.perf$point_graph_BANG_.invoke (perf.clj:493)\n    jepsen.checker$latency_graph$reify__12098.check (checker.clj:830)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\nCaused by: java.io.IOException: Cannot run program \"gnuplot\": error=2, No such file or directory\n at java.lang.ProcessBuilder.start (ProcessBuilder.java:1142)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1073)\n    java.lang.Runtime.exec (Runtime.java:590)\n    clojure.java.shell$sh.invokeStatic (shell.clj:113)\n    clojure.java.shell$sh.doInvoke (shell.clj:79)\n    clojure.lang.RestFn.invoke (RestFn.java:512)\n    gnuplot.core$run_BANG_.invokeStatic (core.clj:76)\n    gnuplot.core$run_BANG_.invoke (core.clj:66)\n    gnuplot.core$raw_plot_BANG_.invokeStatic (core.clj:106)\n    gnuplot.core$raw_plot_BANG_.invoke (core.clj:91)\n    jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$point_graph_BANG_.invokeStatic (perf.clj:520)\n    jepsen.checker.perf$point_graph_BANG_.invoke (perf.clj:493)\n    jepsen.checker$latency_graph$reify__12098.check (checker.clj:830)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\nCaused by: java.io.IOException: error=2, No such file or directory\n at java.lang.ProcessImpl.forkAndExec (ProcessImpl.java:-2)\n    java.lang.ProcessImpl.<init> (ProcessImpl.java:313)\n    java.lang.ProcessImpl.start (ProcessImpl.java:244)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1109)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1073)\n    java.lang.Runtime.exec (Runtime.java:590)\n    clojure.java.shell$sh.invokeStatic (shell.clj:113)\n    clojure.java.shell$sh.doInvoke (shell.clj:79)\n    clojure.lang.RestFn.invoke (RestFn.java:512)\n    gnuplot.core$run_BANG_.invokeStatic (core.clj:76)\n    gnuplot.core$run_BANG_.invoke (core.clj:66)\n    gnuplot.core$raw_plot_BANG_.invokeStatic (core.clj:106)\n    gnuplot.core$raw_plot_BANG_.invoke (core.clj:91)\n    jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$point_graph_BANG_.invokeStatic (perf.clj:520)\n    jepsen.checker.perf$point_graph_BANG_.invoke (perf.clj:493)\n    jepsen.checker$latency_graph$reify__12098.check (checker.clj:830)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\n"},
+        :rate-graph {:valid? :unknown,
+                     :error "java.lang.IllegalStateException: Error rendering plot, verify gnuplot is installed and reachable\n at jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$rate_graph_BANG_.invokeStatic (perf.clj:623)\n    jepsen.checker.perf$rate_graph_BANG_.invoke (perf.clj:568)\n    jepsen.checker$rate_graph$reify__12101.check (checker.clj:843)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\nCaused by: java.io.IOException: Cannot run program \"gnuplot\": error=2, No such file or directory\n at java.lang.ProcessBuilder.start (ProcessBuilder.java:1142)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1073)\n    java.lang.Runtime.exec (Runtime.java:590)\n    clojure.java.shell$sh.invokeStatic (shell.clj:113)\n    clojure.java.shell$sh.doInvoke (shell.clj:79)\n    clojure.lang.RestFn.invoke (RestFn.java:512)\n    gnuplot.core$run_BANG_.invokeStatic (core.clj:76)\n    gnuplot.core$run_BANG_.invoke (core.clj:66)\n    gnuplot.core$raw_plot_BANG_.invokeStatic (core.clj:106)\n    gnuplot.core$raw_plot_BANG_.invoke (core.clj:91)\n    jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$rate_graph_BANG_.invokeStatic (perf.clj:623)\n    jepsen.checker.perf$rate_graph_BANG_.invoke (perf.clj:568)\n    jepsen.checker$rate_graph$reify__12101.check (checker.clj:843)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\nCaused by: java.io.IOException: error=2, No such file or directory\n at java.lang.ProcessImpl.forkAndExec (ProcessImpl.java:-2)\n    java.lang.ProcessImpl.<init> (ProcessImpl.java:313)\n    java.lang.ProcessImpl.start (ProcessImpl.java:244)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1109)\n    java.lang.ProcessBuilder.start (ProcessBuilder.java:1073)\n    java.lang.Runtime.exec (Runtime.java:590)\n    clojure.java.shell$sh.invokeStatic (shell.clj:113)\n    clojure.java.shell$sh.doInvoke (shell.clj:79)\n    clojure.lang.RestFn.invoke (RestFn.java:512)\n    gnuplot.core$run_BANG_.invokeStatic (core.clj:76)\n    gnuplot.core$run_BANG_.invoke (core.clj:66)\n    gnuplot.core$raw_plot_BANG_.invokeStatic (core.clj:106)\n    gnuplot.core$raw_plot_BANG_.invoke (core.clj:91)\n    jepsen.checker.perf$plot_BANG_.invokeStatic (perf.clj:489)\n    jepsen.checker.perf$plot_BANG_.invoke (perf.clj:426)\n    jepsen.checker.perf$rate_graph_BANG_.invokeStatic (perf.clj:623)\n    jepsen.checker.perf$rate_graph_BANG_.invoke (perf.clj:568)\n    jepsen.checker$rate_graph$reify__12101.check (checker.clj:843)\n    jepsen.checker$check_safe.invokeStatic (checker.clj:86)\n    jepsen.checker$check_safe.invoke (checker.clj:79)\n    jepsen.checker$compose$reify__11881$fn__11883.invoke (checker.clj:102)\n    clojure.core$pmap$fn__8552$fn__8553.invoke (core.clj:7089)\n    clojure.core$binding_conveyor_fn$fn__5823.invoke (core.clj:2047)\n    clojure.lang.AFn.call (AFn.java:18)\n    java.util.concurrent.FutureTask.run (FutureTask.java:264)\n    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)\n    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)\n    java.lang.Thread.run (Thread.java:831)\n"},
+        :valid? :unknown},
+ :timeline {:valid? true},
+ :exceptions {:valid? true},
+ :stats {:valid? true,
+         :count 50,
+         :ok-count 50,
+         :fail-count 0,
+         :info-count 0,
+         :by-f {:echo {:valid? true,
+                       :count 50,
+                       :ok-count 50,
+                       :fail-count 0,
+                       :info-count 0}}},
+ :availability {:valid? true, :ok-fraction 1.0},
+ :net {:all {:send-count 102,
+             :recv-count 102,
+             :msg-count 102,
+             :msgs-per-op 2.04},
+       :clients {:send-count 102, :recv-count 102, :msg-count 102},
+       :servers {:send-count 0,
+                 :recv-count 0,
+                 :msg-count 0,
+                 :msgs-per-op 0.0},
+       :valid? true},
+ :workload {:valid? true, :errors ()},
+ :valid? :unknown}
+
+
+Errors occurred during analysis, but no anomalies found. ಠ~ಠ
