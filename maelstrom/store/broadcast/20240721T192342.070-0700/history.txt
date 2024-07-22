@@ -1,0 +1,1760 @@
+0	:invoke	:broadcast	0
+0	:info	:broadcast	0	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 0, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 0, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+1	:invoke	:broadcast	1
+1	:info	:broadcast	1	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 1, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 1, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+2	:invoke	:read	nil
+2	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1]
+2	:invoke	:broadcast	2
+2	:info	:broadcast	2	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 2, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 2, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+3	:invoke	:broadcast	3
+3	:info	:broadcast	3	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 3, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 3, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+4	:invoke	:read	nil
+4	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3]
+4	:invoke	:read	nil
+4	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3]
+4	:invoke	:broadcast	4
+4	:info	:broadcast	4	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 4, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 4, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+5	:invoke	:broadcast	5
+5	:info	:broadcast	5	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 5, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 5, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+6	:invoke	:read	nil
+6	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5]
+6	:invoke	:broadcast	6
+6	:info	:broadcast	6	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 6, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 6, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+7	:invoke	:read	nil
+7	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6]
+7	:invoke	:broadcast	7
+7	:info	:broadcast	7	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 7, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 7, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+8	:invoke	:broadcast	8
+8	:info	:broadcast	8	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 8, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 8, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+9	:invoke	:read	nil
+9	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8]
+9	:invoke	:read	nil
+9	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8]
+9	:invoke	:broadcast	9
+9	:info	:broadcast	9	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 9, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 9, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+10	:invoke	:read	nil
+10	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9]
+10	:invoke	:broadcast	10
+10	:info	:broadcast	10	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 10, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 10, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+11	:invoke	:read	nil
+11	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10]
+11	:invoke	:read	nil
+11	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10]
+11	:invoke	:read	nil
+11	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10]
+11	:invoke	:broadcast	11
+11	:info	:broadcast	11	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 11, :msg_id 4}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 4, :message 11, :msg_id 4, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+12	:invoke	:read	nil
+12	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11]
+12	:invoke	:broadcast	12
+12	:info	:broadcast	12	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 12, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 12, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+13	:invoke	:broadcast	13
+13	:info	:broadcast	13	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 13, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 13, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+14	:invoke	:broadcast	14
+14	:info	:broadcast	14	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 14, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 14, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:read	nil
+15	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14]
+15	:invoke	:broadcast	15
+15	:info	:broadcast	15	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 15, :msg_id 8}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 8, :message 15, :msg_id 8, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+16	:invoke	:broadcast	16
+16	:info	:broadcast	16	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 16, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 16, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+17	:invoke	:read	nil
+17	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16]
+17	:invoke	:broadcast	17
+17	:info	:broadcast	17	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 17, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 17, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+18	:invoke	:read	nil
+18	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17]
+18	:invoke	:broadcast	18
+18	:info	:broadcast	18	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 18, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 18, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:read	nil
+19	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18]
+19	:invoke	:broadcast	19
+19	:info	:broadcast	19	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 19, :msg_id 9}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 9, :message 19, :msg_id 9, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+20	:invoke	:broadcast	20
+20	:info	:broadcast	20	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 20, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 20, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+21	:invoke	:read	nil
+21	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]
+21	:invoke	:broadcast	21
+21	:info	:broadcast	21	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 21, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 21, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+22	:invoke	:broadcast	22
+22	:info	:broadcast	22	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 22, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 22, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+23	:invoke	:read	nil
+23	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22]
+23	:invoke	:read	nil
+23	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22]
+23	:invoke	:broadcast	23
+23	:info	:broadcast	23	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 23, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 23, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+24	:invoke	:broadcast	24
+24	:info	:broadcast	24	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 24, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 24, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+25	:invoke	:broadcast	25
+25	:info	:broadcast	25	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 25, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 25, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+26	:invoke	:broadcast	26
+26	:info	:broadcast	26	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 26, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 26, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+27	:invoke	:broadcast	27
+27	:info	:broadcast	27	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 27, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 27, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+28	:invoke	:read	nil
+28	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27]
+28	:invoke	:read	nil
+28	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27]
+28	:invoke	:broadcast	28
+28	:info	:broadcast	28	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 28, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 28, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:read	nil
+29	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28]
+29	:invoke	:broadcast	29
+29	:info	:broadcast	29	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 29, :msg_id 9}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 9, :message 29, :msg_id 9, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+30	:invoke	:broadcast	30
+30	:info	:broadcast	30	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 30, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 30, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+31	:invoke	:read	nil
+31	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30]
+31	:invoke	:broadcast	31
+31	:info	:broadcast	31	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 31, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 31, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+32	:invoke	:read	nil
+32	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]
+32	:invoke	:read	nil
+32	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31]
+32	:invoke	:broadcast	32
+32	:info	:broadcast	32	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 32, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 32, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+33	:invoke	:broadcast	33
+33	:info	:broadcast	33	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 33, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 33, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+34	:invoke	:broadcast	34
+34	:info	:broadcast	34	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 34, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 34, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+35	:invoke	:broadcast	35
+35	:info	:broadcast	35	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 35, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 35, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+36	:invoke	:read	nil
+36	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35]
+36	:invoke	:read	nil
+36	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35]
+36	:invoke	:broadcast	36
+36	:info	:broadcast	36	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 36, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 36, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+37	:invoke	:broadcast	37
+37	:info	:broadcast	37	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 37, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 37, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+38	:invoke	:broadcast	38
+38	:info	:broadcast	38	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 38, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 38, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+39	:invoke	:broadcast	39
+39	:info	:broadcast	39	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 39, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 39, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+40	:invoke	:read	nil
+40	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
+40	:invoke	:read	nil
+40	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
+40	:invoke	:read	nil
+40	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]
+40	:invoke	:broadcast	40
+40	:info	:broadcast	40	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 40, :msg_id 4}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 4, :message 40, :msg_id 4, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+41	:invoke	:read	nil
+41	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40]
+41	:invoke	:broadcast	41
+41	:info	:broadcast	41	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 41, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 41, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+42	:invoke	:broadcast	42
+42	:info	:broadcast	42	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 42, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 42, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+43	:invoke	:broadcast	43
+43	:info	:broadcast	43	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 43, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 43, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+44	:invoke	:read	nil
+44	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43]
+44	:invoke	:broadcast	44
+44	:info	:broadcast	44	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 44, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 44, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+45	:invoke	:broadcast	45
+45	:info	:broadcast	45	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 45, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 45, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+46	:invoke	:read	nil
+46	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45]
+46	:invoke	:broadcast	46
+46	:info	:broadcast	46	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 46, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 46, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+47	:invoke	:read	nil
+47	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46]
+47	:invoke	:read	nil
+47	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46]
+47	:invoke	:read	nil
+47	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46]
+47	:invoke	:read	nil
+47	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46]
+47	:invoke	:broadcast	47
+47	:info	:broadcast	47	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 47, :msg_id 5}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 5, :message 47, :msg_id 5, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+48	:invoke	:broadcast	48
+48	:info	:broadcast	48	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 48, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 48, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+49	:invoke	:broadcast	49
+49	:info	:broadcast	49	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 49, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 49, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+50	:invoke	:read	nil
+50	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49]
+50	:invoke	:read	nil
+50	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49]
+50	:invoke	:broadcast	50
+50	:info	:broadcast	50	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 50, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 50, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+51	:invoke	:broadcast	51
+51	:info	:broadcast	51	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 51, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 51, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+52	:invoke	:read	nil
+52	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51]
+52	:invoke	:read	nil
+52	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51]
+52	:invoke	:broadcast	52
+52	:info	:broadcast	52	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 52, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 52, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+53	:invoke	:broadcast	53
+53	:info	:broadcast	53	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 53, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 53, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+54	:invoke	:broadcast	54
+54	:info	:broadcast	54	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 54, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 54, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+55	:invoke	:read	nil
+55	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54]
+55	:invoke	:broadcast	55
+55	:info	:broadcast	55	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 55, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 55, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:read	nil
+56	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55]
+56	:invoke	:broadcast	56
+56	:info	:broadcast	56	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 56, :msg_id 12}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 12, :message 56, :msg_id 12, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+57	:invoke	:broadcast	57
+57	:info	:broadcast	57	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 57, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 57, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+58	:invoke	:read	nil
+58	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57]
+58	:invoke	:read	nil
+58	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57]
+58	:invoke	:read	nil
+58	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57]
+58	:invoke	:broadcast	58
+58	:info	:broadcast	58	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 58, :msg_id 4}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 4, :message 58, :msg_id 4, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:read	nil
+59	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58]
+59	:invoke	:broadcast	59
+59	:info	:broadcast	59	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 59, :msg_id 10}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 10, :message 59, :msg_id 10, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+60	:invoke	:broadcast	60
+60	:info	:broadcast	60	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 60, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 60, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+61	:invoke	:read	nil
+61	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60]
+61	:invoke	:read	nil
+61	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60]
+61	:invoke	:broadcast	61
+61	:info	:broadcast	61	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 61, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 61, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+62	:invoke	:read	nil
+62	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61]
+62	:invoke	:read	nil
+62	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61]
+62	:invoke	:broadcast	62
+62	:info	:broadcast	62	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 62, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 62, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+63	:invoke	:broadcast	63
+63	:info	:broadcast	63	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 63, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 63, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+64	:invoke	:broadcast	64
+64	:info	:broadcast	64	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 64, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 64, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+65	:invoke	:broadcast	65
+65	:info	:broadcast	65	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 65, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 65, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+66	:invoke	:read	nil
+66	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65]
+66	:invoke	:broadcast	66
+66	:info	:broadcast	66	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 66, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 66, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+67	:invoke	:broadcast	67
+67	:info	:broadcast	67	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 67, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 67, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+68	:invoke	:broadcast	68
+68	:info	:broadcast	68	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 68, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 68, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+69	:invoke	:broadcast	69
+69	:info	:broadcast	69	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 69, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 69, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+70	:invoke	:broadcast	70
+70	:info	:broadcast	70	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 70, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 70, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+71	:invoke	:read	nil
+71	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70]
+71	:invoke	:broadcast	71
+71	:info	:broadcast	71	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 71, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 71, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+72	:invoke	:broadcast	72
+72	:info	:broadcast	72	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 72, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 72, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+73	:invoke	:read	nil
+73	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72]
+73	:invoke	:read	nil
+73	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72]
+73	:invoke	:broadcast	73
+73	:info	:broadcast	73	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 73, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 73, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+74	:invoke	:broadcast	74
+74	:info	:broadcast	74	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 74, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 74, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+75	:invoke	:broadcast	75
+75	:info	:broadcast	75	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 75, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 75, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+76	:invoke	:read	nil
+76	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75]
+76	:invoke	:read	nil
+76	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75]
+76	:invoke	:read	nil
+76	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75]
+76	:invoke	:read	nil
+76	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75]
+76	:invoke	:read	nil
+76	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75]
+76	:invoke	:broadcast	76
+76	:info	:broadcast	76	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 76, :msg_id 6}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 6, :message 76, :msg_id 6, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+77	:invoke	:broadcast	77
+77	:info	:broadcast	77	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 77, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 77, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+78	:invoke	:broadcast	78
+78	:info	:broadcast	78	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 78, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 78, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+79	:invoke	:broadcast	79
+79	:info	:broadcast	79	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 79, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 79, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+80	:invoke	:read	nil
+80	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79]
+80	:invoke	:read	nil
+80	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79]
+80	:invoke	:broadcast	80
+80	:info	:broadcast	80	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 80, :msg_id 3}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 3, :message 80, :msg_id 3, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+81	:invoke	:broadcast	81
+81	:info	:broadcast	81	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 81, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 81, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+82	:invoke	:broadcast	82
+82	:info	:broadcast	82	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 82, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 82, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+83	:invoke	:broadcast	83
+83	:info	:broadcast	83	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 83, :msg_id 1}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 1, :message 83, :msg_id 1, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+84	:invoke	:read	nil
+84	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83]
+84	:invoke	:broadcast	84
+84	:info	:broadcast	84	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 84, :msg_id 2}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 2, :message 84, :msg_id 2, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+85	:invoke	:read	nil
+85	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84]
+85	:invoke	:read	nil
+85	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84]
+85	:invoke	:read	nil
+85	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84]
+85	:invoke	:read	nil
+85	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84]
+85	:invoke	:broadcast	85
+85	:info	:broadcast	85	indeterminate: Malformed RPC response. Maelstrom sent node n0 the following request:
+
+{:type "broadcast", :message 85, :msg_id 5}
+
+And expected a response of the form:
+
+{:type (eq "broadcast_ok"), {:k :msg_id} Int, :in_reply_to Int}
+
+... but instead received
+
+{:in_reply_to 5, :message 85, :msg_id 5, :type "broadcast_ok"}
+
+This is malformed because:
+
+{:message disallowed-key}
+
+See doc/protocol.md for more guidance.
+86	:invoke	:read	nil
+86	:ok	:read	[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85]
